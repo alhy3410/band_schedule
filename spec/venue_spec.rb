@@ -6,5 +6,9 @@ describe(Venue) do
     band2 = test_venue.bands.create({:name => "band2"})
     expect(test_venue.bands()).to(eq([band1, band2]))
   end
-  
+
+  it('validates presence of venue name') do
+    venue = Venue.create({:name => ""})
+    expect(venue.save()).to(eq(false))
+  end
 end
