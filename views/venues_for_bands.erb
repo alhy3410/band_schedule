@@ -1,0 +1,22 @@
+<h1>Here are the venues where <%= @band.name() %> will perform </h1>
+<hr>
+
+<% if @band.venues.any?() %>
+  <% @band.venues.uniq.each() do |venue| %>
+    <ul>
+      <li><a href='/venue/<%= venue.id()%>'><%= venue.name()%></a></li>
+    </ul>
+    <% end %>
+<% else %>
+  <h3>This band has not listed any venues yet</h3>
+<% end %>
+
+<form action='/band/<%= @band.id()%>' method='post'>
+  <label for='add_venue_to_band'>Add a Venue to this Band</label>
+  <select id ='add_venue_to_band' name='add_venue_to_band' type='text'>
+    <% @venues.each() do |venue| %>
+      <option value= <%=venue.id() %>> <%=venue.name()%> </option>
+    <% end %>
+  </select>
+  <button type='submit'>Add Venue</button>
+</form>

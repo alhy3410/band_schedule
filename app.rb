@@ -52,7 +52,7 @@ get('/venue/:id') do
 end
 
 post('/venue/:id') do
-  @venue = Venue.find(params.fetch('id').to_i())
+  @venues = Venue.find(params.fetch('id').to_i())
   band_id = params.fetch('add_band_to_venue').to_i()
   band = Band.find(band_id)
   @venue.bands.push(band)
@@ -61,10 +61,16 @@ post('/venue/:id') do
 end
 
 get('/band/:id') do
+  @venues = Venue.all()
+  @band = Band.find(params.fetch('id').to_i())
+  erb(:venues_for_bands)
+end
+
+post('/band/:id') do
   @band = Band.find(params.fetch('id').to_i())
   venue_id = params.fetch('add_venue_to_band').to_i()
   venue = Venue.find(venue_id)
   @band.venues.push(venue)
-  @venue = Venue.all()
+  @venues = Venue.all()
   erb(:venues_for_bands)
 end
