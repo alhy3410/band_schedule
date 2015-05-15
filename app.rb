@@ -56,6 +56,6 @@ post('/venue/:id') do
   band_id = params.fetch('add_band_to_venue').to_i()
   band = Band.find(band_id)
   @venue.bands.push(band)
-  @band = Band.all()
+  @bands = Band.all()
   erb(:bands_at_venue)
 end

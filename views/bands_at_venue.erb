@@ -2,7 +2,7 @@
 <hr>
 
 <% if @venue.bands.any?() %>
-  <% @venue.bands.each() do |band| %>
+  <% @venue.bands.uniq.each() do |band| %>
     <ul>
       <li><a href='/band/<%= band.id()%>'><%= band.name()%></a></li>
     </ul>
@@ -15,7 +15,7 @@
   <label for='add_band_to_venue'>Add a Band to this Venue</label>
   <select id ='add_band_to_venue' name='add_band_to_venue' type='text'>
     <% @bands.each() do |band| %>
-      <option value= <%=band.id() %> <%=band.name()%> </option>
+      <option value= <%=band.id() %>> <%=band.name()%> </option>
     <% end %>
   </select>
   <button type='submit'>Add Band</button>
