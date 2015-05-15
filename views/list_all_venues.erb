@@ -1,0 +1,19 @@
+<h1>Here is a list of all Venues</h1>
+
+<% if @venues.any?() %>
+  <% @venues.each() do |venue| %>
+  <ul>
+    <li><a href='/venue/<%= venue.id() %>'> <%= venue.name() %>[<a href="/delete_venue/<%= venue.id() %>">x</a>] </a></li>
+  </ul>
+  <% end %>
+<% else %>
+  <h3>There are no venues added yet.</h3>
+<% end %>
+
+<form action ='/venues/all' method='post'>
+  <label for='venue_name'>Enter Venue Name Here: </label>
+  <input id='venue_name' name='venue_name' type='text'>
+  <button type='submit'> Add Venue</button>
+</form>
+
+<h4><a href='/'>Return Home</a></h4>
