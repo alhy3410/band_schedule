@@ -52,7 +52,7 @@ get('/venue/:id') do
 end
 
 post('/venue/:id') do
-  @venues = Venue.find(params.fetch('id').to_i())
+  @venue = Venue.find(params.fetch('id').to_i())
   band_id = params.fetch('add_band_to_venue').to_i()
   band = Band.find(band_id)
   @venue.bands.push(band)
@@ -79,5 +79,12 @@ post('/band/:id/update') do
   @band = Band.find(params.fetch('id').to_i())
   band_name = params.fetch('update_band_name')
   @band.update({:name => band_name})
-  erb(:update_band_name)
+  erb(:update_page)
+end
+
+post('/venue/:id/update') do
+  @venue = Venue.find(params.fetch('id').to_i())
+  venue_name = params.fetch('update_venue_name')
+  @venue.update({:name => venue_name})
+  erb(:update_page)
 end

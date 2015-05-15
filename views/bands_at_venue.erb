@@ -21,4 +21,12 @@
   <button type='submit'>Add Band</button>
 </form>
 
+<form action='/venue/<%= @venue.id()%>/update' method='post'>
+  <label for='update_venue_name'>Update the venue name</label>
+  <input id='update_venue_name' name='update_venue_name' type='update_venue_name'>
+  <button type='submit'>Update Venue Name</button>
+</form>
+
+
+<h4><a href='/venues/all'>Return to All Venues</a></h4>
 <h4><a href='/'>Return Home</a></h4>
