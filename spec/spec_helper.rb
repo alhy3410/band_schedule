@@ -1,5 +1,9 @@
 ENV['RACK_ENV'] = 'test'
 
+require('spec_helper')
+require('capybara/rspec')
+require('./app')
+
 require("bundler/setup")
 Bundler.require(:default)
 

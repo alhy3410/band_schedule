@@ -6,6 +6,7 @@ gem("sinatra-activerecord")
 gem("rake")
 gem("pg")
 gem("shoulda-matchers")
+gem("capybara")
 
 group(:test) do
   gem("rspec")

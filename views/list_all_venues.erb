@@ -4,7 +4,7 @@
 <% if @venues.any?() %>
   <% @venues.each() do |venue| %>
   <ul>
-    <li><a href='/venue/<%= venue.id() %>'> <%= venue.name() %>[<a href="/delete_venue/<%= venue.id() %>">x</a>] </a></li>
+    <li><a href='/venue/<%= venue.id() %>'> <%= venue.name() %> [<a href="/delete_venue/<%= venue.id() %>">x</a>] </a></li>
   </ul>
   <% end %>
 <% else %>

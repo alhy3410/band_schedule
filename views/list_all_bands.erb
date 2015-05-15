@@ -3,7 +3,7 @@
 <% if @bands.any?() %>
   <% @bands.each() do |band| %>
   <ul>
-    <li><a href='/band/<%= band.id() %>'> <%= band.name() %>[<a href="/delete_band/<%= band.id() %>">x</a>] </a></li>
+    <li><a href='/band/<%= band.id() %>'> <%= band.name() %> [<a href="/delete_band/<%= band.id() %>">x</a>] </a></li>
   </ul>
   <% end %>
 <% else %>
