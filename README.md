@@ -1,4 +1,4 @@
-# Dictionary README
+# Band Schedule README
 
 
 ## Installation
@@ -12,6 +12,19 @@ bundle install
 ## Usage
 
 To use the app run
+
+```
+postgres
+```
+
+Run postgres in your terminal
+
+```
+rake db:create
+```
+
+From there you will create three tables which will hold the data for your project. You just need to run the migration in order to set up the tables. 
+
 ```
 ruby app.rb
 ```
